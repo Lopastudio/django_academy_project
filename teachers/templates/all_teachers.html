@@ -1,0 +1,25 @@
+{% extends "master.html" %}
+
+{% block title %}
+    Teachers
+{% endblock %}
+
+{% block content %}
+    <div class="max-w-md mx-auto mt-8">
+        <h1 class="text-2xl font-bold mb-4">Teachers</h1>
+
+        <ul class="list-disc pl-4">
+            {% for teacher in my_teachers %}
+                <li class="mb-2">
+                    {{ teacher.first_name }} {{ teacher.last_name }}
+                    <a href="detail/{{ teacher.id }}" class="text-blue-500 hover:underline">Detail for teacher</a>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <div class="mt-4">
+            <a href="teachers_form" class="text-blue-500 hover:underline">Add New Teacher</a>
+            <a href="lectures_form" class="ml-4 text-blue-500 hover:underline">Add New Lecture</a>
+        </div>
+    </div>
+{% endblock %}
